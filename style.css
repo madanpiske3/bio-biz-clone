@@ -1,0 +1,352 @@
+/* General Styles */
+body {
+  position: relative;
+  margin: 0;
+  padding: 0;
+}
+
+.Homeslider {
+  position: relative;
+}
+
+.social-icon-cont {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  position: fixed;
+  top: 20%;
+  left: 20px;
+  transform: translate(-20%);
+}
+
+/* Main Section Styles */
+.main-sec {
+  background-color: #d6d6d6;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 10vw;
+}
+
+.main-sec .left-cont {
+  width: 50%;
+}
+
+.main-sec .right-cont {
+  width: 50%;
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.main-sec-box p {
+  color: #000080;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.main-sec-cont {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 52px;
+}
+
+.sec-heading {
+  text-align: center;
+  color: black;
+  font-family: "Poppins", Helvetica, Arial, Lucida, sans-serif;
+  font-weight: 600;
+  font-size: 32px;
+}
+
+/* India Updates Section with View Button */
+.scroll-update {
+  background-color: #1fe089;
+  width: 300px;
+  height: 300px;
+  padding: 22px;
+  overflow: hidden;
+}
+
+.scroll-heading {
+  font-family: "Poppins", Helvetica, Arial, Lucida, sans-serif;
+  font-weight: 600;
+  font-size: 36px;
+  color: #12876f !important;
+  text-align: center;
+}
+
+.scrollar {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  white-space: nowrap;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  align-items: flex-start;
+  animation: scroll 20s linear infinite;
+  text-wrap: wrap;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.scrollar::-webkit-scrollbar {
+  width: 0;
+}
+
+.scrollar p {
+  display: block;
+  position: relative;
+  animation: scroll-top-bottom 10s linear infinite;
+  white-space: nowrap;
+  text-wrap: wrap;
+  transform: translateY(100%);
+  margin: 8px 0;
+}
+
+.scrollar:hover p {
+  animation-play-state: paused;
+}
+
+@keyframes scroll-top-bottom {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(-100%);
+  }
+}
+/* View Button Styling (Inside India Updates Section) */
+.view-button {
+  color: #12876f;
+  font-size: 18px;
+  font-family: "DM Sans", Helvetica, Arial, sans-serif;
+  padding: 10px 20px;
+  border: 2px solid #12876f;
+  border-radius: 5px;
+  background-color: transparent;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  position: absolute; /* Positions the button at the bottom */
+  bottom: 405px; /* Adjust spacing from bottom */
+  right: 100px;
+  transform: translateX(-50%);
+}
+
+.view-button:hover {
+  background-color: #12876f;
+  color: #fff;
+}
+
+.view-button span {
+  display: none;
+}
+
+.view-button:hover span {
+  display: inline-block;
+  color: #fff;
+}
+
+/* View Button Styling (Outside India Updates Section) */
+.view-button-outside {
+  color: #12876f;
+  font-size: 18px;
+  font-family: "DM Sans", Helvetica, Arial, sans-serif;
+  padding: 10px 20px;
+  border: 2px solid #12876f;
+  border-radius: 5px;
+  background-color: transparent;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  margin-top: 20px; /* Adds spacing from the content */
+}
+
+.view-button-outside:hover {
+  background-color: #12876f;
+  color: #fff;
+}
+
+.view-button-outside span {
+  display: none;
+}
+
+.view-button-outside:hover span {
+  display: inline-block;
+  color: #fff;
+}
+
+
+/* Navbar Styles */
+.Navbar {
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: white; /* Add background for better visibility */
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo {
+  width: 20%;
+  max-width: 150px;
+  height: auto;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 15px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: black;
+  font-family: "DM Sans", Helvetica, Arial, Lucida, sans-serif;
+  font-size: 16px;
+  transition: color 0.3s;
+}
+
+nav ul li a.active {
+  color: aqua;
+}
+
+nav ul li a:hover {
+  color: #12876f;
+}
+
+/* Responsive Navbar */
+@media screen and (max-width: 980px) {
+  .Navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  nav ul {
+    flex-direction: column;
+    display: none; /* Initially hidden */
+    width: 100%;
+  }
+
+  nav ul.show {
+    display: flex; /* Show when toggled */
+  }
+
+  .menu-toggle {
+    display: block;
+    cursor: pointer;
+    font-size: 24px;
+    color: #12876f;
+  }
+
+  .main-sec,
+  .main-sec-cont {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .main-sec .left-cont,
+  .main-sec .right-cont {
+    width: 100%;
+    justify-content: center;
+  }
+}
+ /* Other Section Styles */
+.other-section {
+  width: 100%;
+  background-color: orangered;
+  text-align: center;
+  padding: 22px 10px; /* Added horizontal padding for small screens */
+  box-sizing: border-box; /* Include padding in the width */
+}
+
+.Head {
+  margin: 0;
+  padding: 12px;
+  font-size: 28px;
+  font-family: "Poppins", Helvetica, Arial, sans-serif;
+  color: black;
+  font-weight: 600;
+}
+
+.Other-Content {
+  display: flex;
+  flex-wrap: wrap; /* Ensure responsiveness */
+  align-items: center;
+  justify-content: center; /* Center the content */
+  gap: 16px; /* Adjust spacing between items */
+}
+
+.Other-Content button {
+  background-color: #007fe0;
+  color: white;
+  outline: none;
+  border: none;
+  font-size: 14px;
+  padding: 10px 20px;
+  font-family: "Poppins", Helvetica, Arial, sans-serif;
+  font-weight: 600;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.Other-Content button:hover {
+  background-color: #005bb5;
+  color: #fff;
+}
+
+.other-section p {
+  color:#fff;
+  padding: 10px 0;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.other-section button span {
+  display: none;
+  border-radius: 50%;
+  border: 1.5px solid white;
+  font-size: 10px;
+  padding: 2px;
+}
+
+.other-section button:hover span {
+  display: inline-block;
+}
+
+/* Responsive Adjustments */
+@media screen and (max-width: 768px) {
+  .Other-Content {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .Head {
+    font-size: 22px;
+  }
+
+  .Other-Content button {
+    width: 80%; /* Make buttons take up more space on smaller screens */
+    text-align: center;
+  }
+}
+.Copyright p {
+  text-align: center;
+  /* font-weight: 700; */
+  font-family: "DM Sans", Helvetica, Arial, Lucida, sans-serif;
+  font-size: 16px;
+}
+
